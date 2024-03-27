@@ -29,5 +29,134 @@ int main (void){
 }
 
 
-======= =======
+======= POSITIVO OU NEGATIVO =======
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+	int n1;
+	
+	printf("Digite o valor: ");
+	scanf("%i",&n1);
+	fflush(stdin);
+	
+	if(n1>0){
+		printf("Positivo\n");	
+	} else if(n1<0){
+		printf("Negativo\n");	
+	} else{
+		printf("Neutro");	
+	}
+	
+	return 0;
+}
+
+
+=======  =======
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+	char letra;
+	
+	printf("Digite uma letra: ");
+	scanf("%c",&letra);
+	fflush(stdin);
+	
+	switch(letra){ 
+		case 'f':
+			printf("Feminino\n");
+			break;
+		case 'm':
+			printf("Masculino\n");
+			break;
+		default:
+			printf("Não possui cadastro");
+	}
+	
+	return 0;
+}
+
+
+
+======= ========
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+	char letra;
+	
+	printf("Digite o sexo (f/m): ");
+	scanf("%c",&letra);
+	fflush(stdin);
+	
+	switch(letra){ 
+		case 'f':
+			printf("Feminino\n");
+			break;
+		case 'm':
+			printf("Masculino\n");
+			break;
+		case 'F':
+			printf("Feminino\n");
+			break;
+		case 'M':
+			printf("Masculino\n");
+			break;
+		default:
+			printf("Erro de digitação");
+	}
+	
+	return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+	char letra;
+	
+	printf("Digite o sexo (f/m): ");
+	scanf("%c",&letra);
+	fflush(stdin);
+	
+	switch(letra){ 
+		case 'f': case 'F':
+			printf("Feminino\n");
+			break;
+		case 'm': case 'M':
+			printf("Masculino\n");
+			break;
+		default:
+			printf("Erro de digitação");
+	}
+	
+	return 0;
+}
+
+
+
+
+==============
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+	float numero;
+	int aux;
+	
+	printf("Digite um numero: ");
+	scanf("%f",&numero);
+	fflush(stdin);
+	
+	if (numero==((int)numero)){
+		printf("O numero e inteiro\n");
+	} else{
+		printf("O numero e decimal\n");
+	}
+	
+	return 0;
+}
 */
