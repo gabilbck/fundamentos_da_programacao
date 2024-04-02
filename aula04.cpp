@@ -165,7 +165,30 @@ int main (void){
 }
 
 //8. Faça um programa que leia 3 valores inteiros e exiba-os em ordem crescente.
+#include <stdio.h>
+#include <stdlib.h>
 
+int main (void){
+    int n1, n2, n3;
+
+    printf("Digite um numero: ");
+    scanf("%i"&n1);
+    fflush(stdin);
+
+    printf("Digite outro numero: ");
+    scanf("%i"&n2);
+    fflush(stdin);
+
+    printf("Digite mais um numero: ");
+    scanf("%i"&n3);
+    fflush(stdin);
+
+    if (n1 == 0){
+        
+
+
+    return 0;
+}
 
 
 
