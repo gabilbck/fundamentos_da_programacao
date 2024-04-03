@@ -465,7 +465,162 @@ int main(void){
     return 0;
 }
 
+// 13. Faça um programa que pergunte em que turno você estuda. 
+// Peça para digitar M- matutino ou V-Vespertino ou N-Noturno.
+// Imprima a mensagem Bom Dia!, Boa Tarde! ou Boa Noite! ou Valor Inválido!, conforme o caso. 
+#include <stdio.h>
+#include <stdlib.h>
 
+int main (void){
+    char op;
+    
+    printf("Digite a letra correspondente ao seu turno: \n\n");
+    printf("M - matutino: \n");
+    printf("V - Vespertino: \n");
+    printf("N - Noturno: \n\n");
+    scanf("%c",&op);
+    fflush(stdin);
+    
+    switch (op){
+        case 'm': case 'M':
+            printf("Bom dia!");
+        break;
+        case 'v': case 'V':
+            printf("Boa tarde!");
+        break;
+        case 'n': case 'N':
+            printf("Boa noite!");
+        break;
+        default:
+            printf("Escolha uma opcao valida!");
+        break;
+    }
+    
+    return 0;
+}
+
+
+// 14. Faça um programa que leia um número e exiba o dia correspondente da semana. 
+// (1-Domingo, 2- Segunda,etc.), se digitar outro valor deve aparecer valor inválido. 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+    char op;
+    
+    printf("Digite o numero correspondente ao dia da semana: \n\n");
+    scanf("%c",&op);
+    fflush(stdin);
+    
+    switch (op){
+        case '1':
+            printf("Domingo");
+        break;
+        case '2':
+            printf("Segunda-feira");
+        break;
+        case '3':
+            printf("Terca-feira");
+        break;
+        case '4':
+            printf("Quarta-feira");
+        break;
+        case '5':
+            printf("Quinta-feira");
+        break;
+        case '6':
+            printf("Sexta-feira");
+        break;
+        case '7':
+            printf("Sabado");
+        break;
+        default:
+            printf("Valor inválido");
+        break;
+    }
+    
+    return 0;
+}
+
+// ==== DANDO BUG ====
+// 15. Faça um programa que tendo como dados de entrada o preço de custo de um 
+// produto e um código de origem, emita o preço junto de sua procedência. Caso o 
+// código não seja nenhum dos especificados, o produto deve ser classificado como 
+// importado. Código de origem: 1 - Sul, 2 - Norte 3 - Leste, 4 - Oeste, 5 ou 6 - 
+// nordeste 7 ou 8 Centro-oeste. 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+    //preco de custo
+    //codigo de origem
+    //Código de origem: 1 - Sul, 2 - Norte 3 - Leste, 4 - Oeste, 5 ou 6 - nordeste 7 ou 8 Centro-oeste
+    float preco;
+    char cod;
+    
+    printf("Informe o preco de custo do produto: \n");
+    scanf("%f",&preco);
+    fflush(stdin);
+    
+    printf("Informe o codigo de origem, segundo a tabela abaixo:\n\n");
+    printf("-------------------------\n");
+    printf("|   1    |     SUL      |\n");
+    printf("-------------------------\n");
+    printf("|   2    |    NORTE     |\n");
+    printf("-------------------------\n");
+    printf("|   3    |    LESTE     |\n");
+    printf("-------------------------\n");
+    printf("|   4    |    OESTE     |\n");
+    printf("-------------------------\n");
+    printf("| 5 ou 6 |   NORDESTE   |\n");
+    printf("-------------------------\n");
+    printf("| 7 ou 8 | CENTRO-OESTE |\n");
+    printf("-------------------------\n");
+    scanf("%c",&cod);
+    fflush(stdin);
+    
+    switch (cod){
+        case '1':
+            printf("Preco de custo: %f\n",preco);
+            printf("Codigo de origem: 1 - Sul");
+        break;
+        case '2':
+            printf("Preco de custo: %f\n",preco);
+            printf("Codigo de origem: 2 - Norte");
+        break;
+        case '3':
+            printf("Preco de custo: %f\n",preco);
+            printf("Codigo de origem: 3 - Leste");
+        break;
+        case '4':
+            printf("Preco de custo: %f\n",preco);
+            printf("Codigo de origem: 4 - Oeste");
+        break;
+        case '5': case '6':
+            printf("Preco de custo: %f\n",preco);
+            printf("Codigo de origem: %c - Nordeste",cod);
+        break;
+        case '7': case '8':
+            printf("Preco de custo: %f\n",preco);
+            printf("Codigo de origem: %c - Centro-Oeste",cod);
+        break;
+        default:
+            printf("Preco de custo: %f\n",preco);
+            printf("Codigo de origem: Importado");
+        break;
+    }
+    
+    return 0;
+    
+    
+    
+    
+    
+    
+    
+    
+}
 
 
 
