@@ -153,12 +153,19 @@ int main (void){
 	scanf("%c",&letra);
 	fflush(stdin);
 	
-	switch(letra){ 
-		case 'a': case 'e': case 'i': case 'o': case 'u':
-			printf("Vogal\n");
-			break;
-		default:
-			printf("Consoante\n");
+	if ((letra>='a' && letra<='z') || (letra>='A' && letra<='Z')){
+		if(letra>='A' && letra<='Z'){
+			letra=letra+('a'-'A');
+		}
+		switch(letra){
+			case 'a': case 'e': case 'i': case 'o': case 'u':
+				printf("E uma vogal\n");
+				break;
+			default:
+				printf("E uma consoante\n");
+		}
+	}else{
+		printf("Nao e uma letra");
 	}
 	
 	return 0;
@@ -184,48 +191,62 @@ int main (void){
     scanf("%i",&n3);
     fflush(stdin);
 
-    if (n1<n2&&n3){ //Se N1 for menor que os outros
-    	printf(" %i\n",n1);
+    if (n1<n2 && n1<n3){ //Se N1 for menor que os outros
+    		printf(" %i\n",n1);
     	if(n2<n3){ 
-    		printf(" %i\n",n2);
-    		printf(" %i\n",n3); // N1, N2, N3
-		} else if(n3<n2){
-			printf(" %i\n",n3);
-    		printf(" %i\n",n2); // N1, N3, N2
+    		printf(" %i\n %i\n",n2,n3); // N1, N2, N3
+		}else{
+			printf(" %i\n %i\n",n3,n2); // N1, N3, N2
 		}
-    } else if(n2<n1&&n3){ //Se N2 for menor que os outros
+    } else if(n2<n1 && n2<n3){ //Se N2 for menor que os outros
     	printf(" %i\n",n2);
     	if(n1<n3){
-    		printf(" %i\n",n1);
-    		printf(" %i\n",n3); // N2, N1, N3
-		} else if(n3<n1){
-			printf(" %i\n",n3);
-    		printf(" %i\n",n1); // N2, N3, N1
+    		printf(" %i\n %i\n",n1,n3); // N2, N1, N3
+		} else{
+			printf(" %i\n %i\n",n3,n1); // N2, N3, N1
 		}
-	} else if(n3<n1&&n2){ //Se N3 for menor que os outros
-		printf(" %i\n",n3);
+	} else{ //Se N3 for menor que os outros
+		printf(" %i\n", n3);
 		if(n1<n2){
-			printf(" %i\n",n1);
-    		printf(" %i\n",n2); // N3, N1, N2
-		} else if(n2<n1){
-			printf(" %i\n",n2);
-    		printf(" %i\n",n1); // N3, N2, N1
+			printf(" %i\n %i\n",n1,n2); // N3, N1, N2
+		} else{
+			printf(" %i\n %i\n",n2,n1); // N3, N2, N1
 		}
-	} else if((n1==n2)<n3){ //Se N1 == N2 forem menores que N3
-		printf(" %i\n %i\n %i\n",n1,n2,n3);
-	} else if((n1==n3)<n2){ //Se N1 == N3 forem menores que N2
-		printf(" %i\n %i\n %i\n",n1,n3,n2);
-	} else if((n2==n3)<n1){ //Se N2 == N3 forem menores que N1
-		printf(" %i\n %i\n %i\n",n2,n3,n1);
-	} else if((n1==n2)>n3){ //Se N1 == N2 forem maiores que N3
-		printf(" %i\n %i\n %i\n",n3,n1,n2);
-	} else if((n1==n3)>n2){ //Se N1 == N3 forem maiores que N2
-		printf(" %i\n %i\n %i\n",n2,n1,n3);
-	} else if((n2==n3)>n1){ //Se N2 == N3 forem maiores que N1
-		printf(" %i\n %i\n %i\n",n1,n2,n3);
-	} else { //Se todos forem iguais if(n1==n2==n3)
-		printf(" %i\n %i\n %i\n",n1,n2,n3);
+	} 
+    return 0;
+}
+
+// OU
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+    int n1, n2, n3, aux;
+
+    printf("Digite um numero: ");
+    scanf("%i",&n1);
+    fflush(stdin);
+
+    printf("Digite outro numero: ");
+    scanf("%i",&n2);
+    fflush(stdin);
+
+    printf("Digite mais um numero: ");
+    scanf("%i",&n3);
+    fflush(stdin);
+
+    if(n1>n2){
+    	aux=n1; n1=n2; n2=aux;
 	}
+	if(n1>n3){
+		aux=n1; n1=n3; n3=aux;
+	}
+	if(n2>n3){
+		aux=n2; n2=n3; n3=aux;
+	}
+	
+	printf("%i %i %i\n",n1,n2,n3);
     return 0;
 }
 
@@ -256,9 +277,9 @@ int main (void){
     media=(notas/3);
     
     if (media>=7){
-    	printf("Aprovado\n%f",media);
+    	printf("Aprovado\n%.2f",media);
 	} else if (media<7){
-		printf("Reprovado\n%f",media);
+		printf("Reprovado\n%.2f",media);
 	} else if (media==10){
 		printf("Aprovado com Distincaoo!\n%f",media);
 	} else{
@@ -334,11 +355,11 @@ int main (void){
     fflush(stdin);
     
     printf("Digite o operador desejado, seguindo o menu:\n\n");
-    printf("[ 1 ] – Adicao\n");
-	printf("[ 2 ] – Subtracao\n");
-	printf("[ 3 ] – Multiplicacao\n");
-	printf("[ 4 ] – Divisao\n");
-	printf("[ 5 ] – Fim\n");
+    printf("[ 1 ] Adicao\n");
+	printf("[ 2 ] Subtracao\n");
+	printf("[ 3 ] Multiplicacao\n");
+	printf("[ 4 ] Divisao\n");
+	printf("[ 5 ] Fim\n");
     scanf("%c",&op);
     fflush(stdin);
     
@@ -349,25 +370,29 @@ int main (void){
     switch (op){
 		case '1':
 			res=n1+n2;
-			printf("%f",res);
+			printf("%f + %f = %f\n",n1,n2,res);
 		break;
 		case '2':
 			res=n1-n2;
-			printf("%f",res);
+			printf("%f - %f = %f\n",n1,n2,res);
 		break;
 		case '3':
 			res=n1*n2;
-			printf("%f",res);
+			printf("%f * %f = %f\n",n1,n2,res);
 		break;
 		case '4':
-			res=n1/n2;
-			printf("%f",res);
+			if(n2!=0){
+				res=n1/n2;
+				printf("%f / %f = %f\n",n1,n2,res);	
+			} else{
+				printf("Voce nao pode dividir valores por zero!");
+			}
 		break;
 		case '5':
 			printf("Fim!");
 		break;
 		default:
-			printf("Você não inseriu um operador valido!");
+			printf("Voce nao inseriu um operador valido!");
 		break;
 	}	
     return 0;
