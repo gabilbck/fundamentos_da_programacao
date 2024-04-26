@@ -1,7 +1,7 @@
 # FUNDAMENTOS DA PROGRAMAÇÃO
 Códigos construídos durante as aulas do curso de Fundamentos da Programação na faculdade de Engenharia de Software na Católica.
 
-### CRONOGRAMA DE CONTEÚDOS
+### CRONOGRAMA DE CONTEÚDOS - CANSI
 <div>
   <ul>
     <li>AULA 05/03/2024 - Primeira aula (Introdução)</li>
