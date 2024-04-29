@@ -21,19 +21,26 @@ int main(void){
 	float n1, n2, r;
 	
 	do{
-		system("cls");
-		system("color 71");
+		/* Do faz o código, não realiza nenhum tipo de
+		   verificação, apenas no final, com o while que,
+		   se for verdadeiro, realiza o looping    */
+		system("cls"); //limpa a tela = clear
+		system("color 71"); //colore a tela
+
 		// entrada
 		printf("[1] - Adicao\n");
 		printf("[2] - Subtracao\n");
 		printf("[3] - Multiplicacao\n");
 		printf("[4] - Divisao\n");
 		printf("[5] - Fim\n");
+		// Escolhe uma opção
 		printf("Digite uma opcao: ");
 		scanf("%i",&opcao);
 		fflush(stdin);
 		
+		// Se digitar um número de 1 a 5:
 		if(opcao>=1 && opcao<=5){
+			//Se não for a opção de saída, digita os valores
 			if(opcao!=5){
 				printf("Digite 1 numero: ");
 				scanf("%f",&n1);
@@ -42,6 +49,7 @@ int main(void){
 				scanf("%f",&n2);
 				fflush(stdin);
 			}
+			//processamento das opções selecionadas:
 			switch(opcao){
 				case 1:
 					r=n1+n2;
@@ -69,11 +77,12 @@ int main(void){
 			}
 			
 		}else{
+			//numero diferente de 1 a 5
 			printf("Erro! Nao tem esta opcao\n");
 		}
-		getch();
+		getch(); //armazena o valor que foi digitado
 	}while(opcao!=5);
-	
-	
+	/* Repete o ciclo caso o programa não tenha funcionado, 
+	   se não, encerra o processo */
 	return 0;
 }
