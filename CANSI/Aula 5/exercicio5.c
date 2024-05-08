@@ -27,3 +27,49 @@ int main (void){
     printf("A media bimestral da turma e: %i",media); //mostra a média
     return 0;
 }
+
+//CORREÇÃO
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+	// variáveis
+	int i, qtd_turmas, qtd_alunos, soma = 0;
+	float media;
+	
+	// entrada
+	printf("Digite a quantidade de turmas: ");
+	scanf("%i",&qtd_turmas);
+	fflush(stdin);
+	for(i=1;i<=qtd_turmas;i++){
+		printf("Digite a quantidade de alunos na turma %i: ",i);
+		scanf("%i",&qtd_alunos);
+		fflush(stdin);
+		if(qtd_alunos>=1 && qtd_alunos<=40){
+			soma+=qtd_alunos;	
+		}else{
+			printf("Erro! A quantidade maior 40 alunos por turma\n");
+			
+			char op;
+			printf("Deseja incluir este numero de alunos (s/n): ");
+			scanf("%c",&op);
+			fflush(stdin);
+			if(op=='s'){
+				soma+=qtd_alunos;
+			}else{
+				i--;
+			}
+			
+		}	
+	}
+	
+	// processamento
+	media=(float)soma/qtd_turmas;
+	
+	// saída
+	printf("A media de alunos por turma e %.1f\n",media);
+		
+	return 0;
+}
+*/

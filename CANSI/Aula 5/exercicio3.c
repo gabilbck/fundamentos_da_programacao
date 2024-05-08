@@ -35,3 +35,37 @@ int main (void){
     }	
 	return 0;
 }
+//CORREÇÃO
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+	// variáveis
+	int maior, menor, numero, i;
+	
+	// entrada
+	for(i=1;i<=10;i++){
+		printf("Digite %i numero: ",i);
+		scanf("%i",&numero);
+		fflush(stdin);
+		if(i==1){
+			maior=numero;
+			menor=numero;
+		}else{
+			if(numero<menor){
+				menor=numero;
+			}
+			if(numero>maior){
+				maior=numero;
+			}
+		}
+	}
+	
+	// saída
+	printf("A diferenca e %i\n",maior-menor);
+	
+	
+	return 0;
+}
+*/

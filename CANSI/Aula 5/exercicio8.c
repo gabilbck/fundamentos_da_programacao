@@ -19,3 +19,25 @@ int main (void){
     printf("Apos %i anos, a populacao do pais A ultrapassara a populacao do pais B.", anos);
     return 0;
 }
+//CORREÇÃO
+/*
+int main(void){
+	// variáveis
+	float a=80000, b=200000;
+	int anos=0;
+	
+	// processamento
+	while(a<=b){
+		a*=1.03;
+		b*=1.015;
+		anos++;
+		printf("%i anos\ta = %.f \tb = %.f\n",anos,a,b);
+		
+	}
+	
+	// saída
+	printf("A quantidade de anos e %i\n",anos);
+		
+	return 0;
+}
+*/

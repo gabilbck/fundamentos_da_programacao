@@ -25,3 +25,30 @@ int main (void){
     }while(op==1);
     return 0;
 }
+
+//correção
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+	// variáveis
+	int soma = 0, i;
+	char op;
+	
+	do{
+		soma=0;
+		// processamento
+		for(i=100;i<=200;i+=2){
+			soma+=i;
+		}
+		printf("A soma e %i\n",soma);
+		printf("Deseja repetir (s/n)? ");
+		scanf("%c",&op);
+		fflush(stdin);
+		
+	}while(op=='s');
+
+	return 0;
+}
+*/
